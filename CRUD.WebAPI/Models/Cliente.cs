@@ -6,7 +6,7 @@ namespace CRUD.WebAPI.Models
     public class Cliente
     {
         public Cliente() { }
-        public Cliente(int id, string nome, DateTime dataNascimento, string cpf, string rg)
+        public Cliente(int id, string nome, string dataNascimento, string cpf, string rg)
         {
             this.Id = id;
             this.Nome = nome;
@@ -17,7 +17,7 @@ namespace CRUD.WebAPI.Models
         }
         public int Id { get; set; }
         public string Nome { get; set; }
-        public DateTime DataNascimento { get; set; }
+        public string DataNascimento { get; set; }
         public IList<Telefone> Telefones { get; set; }
         public IList<Endereco> Enderecos { get; set; }
         public string Cpf { get; set; }
