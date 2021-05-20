@@ -10,24 +10,25 @@ namespace CRUD.WebAPI.Controllers
     [Route("api/[controller]")]
     public class ClienteController : ControllerBase
     {
-        private readonly DataContext _context;
+        public readonly IRepository _repo;
 
-        public ClienteController(DataContext context)
+        public ClienteController(IRepository repo)
         {
-            _context = context;
+            _repo = repo;
         }
 
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_context.Clientes);
+            var result = _repo.GetAllClientes(true, true);
+            return Ok(result);
         }
 
         [HttpGet("ById")]
         public IActionResult GetById(int id)
         {
-            var cliente = _context.Clientes.FirstOrDefault(c => c.Id == id);
-            if(cliente == null) return BadRequest("O Cliente não foi encontrado");
+            var cliente = _repo.GetClienteById(id, true, true);
+            if (cliente == null) return BadRequest("O Cliente não foi encontrado");
 
             return Ok(cliente);
         }
@@ -35,8 +36,8 @@ namespace CRUD.WebAPI.Controllers
         [HttpGet("ByName")]
         public IActionResult GetByName(string nome)
         {
-            var cliente = _context.Clientes.FirstOrDefault(c => c.Nome.Contains(nome));
-            if(cliente == null) return BadRequest("O Cliente não foi encontrado");
+            var cliente = _repo.GetClienteByName(nome, true, true);
+            if (cliente == null) return BadRequest("O Cliente não foi encontrado");
 
             return Ok(cliente);
         }
@@ -44,42 +45,58 @@ namespace CRUD.WebAPI.Controllers
         [HttpPost]
         public IActionResult Post(Cliente cliente)
         {
-            _context.Add(cliente);
-            _context.SaveChanges();
-            return Ok(cliente);
+            _repo.Add(cliente);
+            if (_repo.SaveChanges())
+            {
+                return Ok(cliente);
+            }
+
+            return BadRequest("Cliente não cadastrado");
         }
 
         [HttpPut("{id}")]
         public IActionResult Put(int id, Cliente cliente)
         {
-            var cli = _context.Clientes.AsNoTracking().FirstOrDefault(c => c.Id == id);
+            var cli = _repo.GetClienteById(id);
             if (cli == null) return BadRequest("Cliente não encontrado!");
 
-            _context.Update(cliente);
-            _context.SaveChanges();
-            return Ok(cliente);
+            _repo.Update(cliente);
+            if (_repo.SaveChanges())
+            {
+                return Ok(cliente);
+            }
+            
+            return BadRequest("Cliente não atualizado");
         }
 
         [HttpPatch("{id}")]
         public IActionResult Patch(int id, Cliente cliente)
         {
-            var cli = _context.Clientes.AsNoTracking().FirstOrDefault(c => c.Id == id);
+            var cli = _repo.GetClienteById(id);
             if (cli == null) return BadRequest("Cliente não encontrado!");
 
-            _context.Update(cliente);
-            _context.SaveChanges();
-            return Ok(cliente);
+            _repo.Update(cli);
+            if (_repo.SaveChanges())
+            {
+                return Ok(cliente);
+            }
+            
+            return BadRequest("Cliente não atualizado");
         }
 
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            var cliente = _context.Clientes.FirstOrDefault(c => c.Id == id);
-            if (cliente == null) return BadRequest("Cliente não encontrado!");
+            var cli = _repo.GetClienteById(id);
+            if (cli == null) return BadRequest("Cliente não encontrado!");
 
-            _context.Remove(cliente);
-            _context.SaveChanges();
-            return Ok();
+            _repo.Delete(cli);
+            if (_repo.SaveChanges())
+            {
+                return Ok("Cliente deletado");
+            }
+            
+            return BadRequest("Cliente não deletado");
         }
     }
 }
