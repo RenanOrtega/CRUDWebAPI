@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CRUDWebAPI</name>
+    </assembly>
+    <members>
+        <member name="T:CRUDWebAPI.Controllers.ClienteController">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:CRUDWebAPI.Controllers.ClienteController._repo">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:CRUDWebAPI.Controllers.ClienteController.#ctor(CRUDWebAPI.Data.IRepository)">
+            <summary>
+            
+            </summary>
+            <param name="repo"></param>
+        </member>
+        <member name="M:CRUDWebAPI.Controllers.ClienteController.Get(CRUDWebAPI.Helpers.PageParams)">
+            <summary>
+            Método responsável por retornar todos os clientes
+            </summary>
+            <param name="pageParams"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CRUDWebAPI.Controllers.ClienteController.GetById(System.Int32)">
+            <summary>
+            Método responsável por retornar apenas um unico cliente pelo Código 
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CRUDWebAPI.Controllers.ClienteController.GetByName(System.String)">
+            <summary>
+            Método responsável por retornar apenas um unico cliente pelo Nome
+            </summary>
+            <param name="nome"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CRUDWebAPI.Controllers.ClienteController.Post(CRUDWebAPI.Models.Cliente)">
+            <summary>
+            Método responsável por cadastrar clientes no banco de dados
+            </summary>
+            <param name="cliente"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CRUDWebAPI.Controllers.ClienteController.Put(System.Int32,CRUDWebAPI.Models.Cliente)">
+            <summary>
+            Método responsável por atualizar o cliente por meio do Código Id
+            </summary>
+            <param name="id"></param>
+            <param name="cliente"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CRUDWebAPI.Controllers.ClienteController.Patch(System.Int32,CRUDWebAPI.Models.Cliente)">
+            <summary>
+            Método responsável por atualizar o meu cliente por meio do código id
+            </summary>
+            <param name="id"></param>
+            <param name="cliente"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CRUDWebAPI.Controllers.ClienteController.Delete(System.Int32)">
+            <summary>
+            Método responsável por delete um cliente por meio do código Id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
