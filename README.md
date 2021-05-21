@@ -25,7 +25,7 @@
 #### Outra maneira de verificar a documentação
 * Vá para https://editor.swagger.io
 * Na Raiz do projeto ache o arquivo 'CrudWebAPI.xml'
-* Abra com o bloco de notas, copie todo o conteudo e cole no site https://editor.swagger.io
+* Abra com o seu navegador, copie todo o conteudo e cole no site https://editor.swagger.io
 
 ### Endpoints
 
