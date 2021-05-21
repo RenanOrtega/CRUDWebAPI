@@ -22,6 +22,11 @@
 * Caso o link acima não funcione e estiver usando Visual Studio 2019, use `http://localhost:10907`
 * Ira abrir um Swagger com a documentação da API.
 
+#### Outra maneira de verificar a documentação
+* Vá para https://editor.swagger.io
+* Na Raiz do projeto ache o arquivo 'CrudWebAPI.xml'
+* Abra com o bloco de notas, copie todo o conteudo e cole no site https://editor.swagger.io
+
 ### Endpoints
 
 Método    | Rota                  | Descrição    |
