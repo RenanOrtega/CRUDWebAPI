@@ -23,17 +23,16 @@
 * Ira abrir um Swagger com a documentação da API.
 
 ### Endpoints
-* [GET]     /api/cliente - Método responsável por retornar todos os clientes
-* [GET]     /api/cliente/{id} - Método responsável por retornar apenas um unico cliente pelo Código Id
-* [GET]     /api/cliente/ByName - Método responsável por retornar apenas um unico cliente pelo Nome
-* [POST]    /api/cliente - Método responsável por cadastrar clientes no banco de dados
-* [PUT]     /api/cliente/{id} - Método responsável por atualizar o cliente por meio do Código Id
-* [PATCH]   /api/cliente/{id} - Método responsável por atualizar o meu cliente por meio do código id
-* [DELETE]  /api/cliente/{id} - Método responsável por delete um cliente por meio do código Id
 
-Alinhado a esquerda | Centralizado | Alinhado a direita
-:--------- | :------: | -------:
-Valor | Valor | Valor
+Método    | Rota                  | Descrição    |
+--------- | --------------------- |------------- |
+[GET]     | /api/cliente          | Método responsável por retornar todos os clientes
+[GET]     | /api/cliente/{id}     | Método responsável por retornar apenas um unico cliente pelo Código Id
+[GET]     | /api/cliente/ByName   | Método responsável por retornar apenas um unico cliente pelo Nome
+[POST]    | /api/cliente          | Método responsável por cadastrar clientes no banco de dados
+[PUT]     | /api/cliente/{id}     | Método responsável por atualizar o cliente por meio do Código Id
+[PATCH]   | /api/cliente/{id}     | Método responsável por atualizar o meu cliente por meio do código id
+[DELETE]  | /api/cliente/{id}     | Método responsável por deletar um cliente por meio do código Id
 
 ## Observações para os recrutadores
 Encontrei dificuldades para fazer o frontend, e no fim não consegui finalizar 50% dele, por isso acabei desconsiderando... Mas caso sirva para algo, poderá encontrar aqui <github.com/RenanOrtega/CRUDApp>
