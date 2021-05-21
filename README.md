@@ -30,9 +30,10 @@
 * [PUT]     /api/cliente/{id} - Método responsável por atualizar o cliente por meio do Código Id
 * [PATCH]   /api/cliente/{id} - Método responsável por atualizar o meu cliente por meio do código id
 * [DELETE]  /api/cliente/{id} - Método responsável por delete um cliente por meio do código Id
-Método | Rota | Descrição
--------|------|----------
-[GET]  |/api/cliente|Método responsável por retornar todos os clientes
+
+Alinhado a esquerda | Centralizado | Alinhado a direita
+:--------- | :------: | -------:
+Valor | Valor | Valor
 
 ## Observações para os recrutadores
 Encontrei dificuldades para fazer o frontend, e no fim não consegui finalizar 50% dele, por isso acabei desconsiderando... Mas caso sirva para algo, poderá encontrar aqui <github.com/RenanOrtega/CRUDApp>
