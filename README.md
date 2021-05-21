@@ -35,4 +35,4 @@ Método    | Rota                  | Descrição    |
 [DELETE]  | /api/cliente/{id}     | Método responsável por deletar um cliente por meio do código Id
 
 ## Observações para os recrutadores
-Encontrei dificuldades para fazer o frontend, e no fim não consegui finalizar 50% dele, por isso acabei desconsiderando... Mas caso sirva para algo, poderá encontrar aqui <github.com/RenanOrtega/CRUDApp>
+Encontrei dificuldades para fazer o frontend, e no fim não consegui finalizar nem 50% dele, por isso acabei desconsiderando... Mas caso sirva para algo, poderá encontrar aqui <https://github.com/RenanOrtega/CRUDApp>
